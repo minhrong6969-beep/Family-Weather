@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {riskFromForecast,makeDemo,cleanDemo,CITIES,cityLabel,validName} from '../assets/core.mjs';
+import {riskFromForecast,makeDemo,cleanDemo,CITIES,cityLabel,validName} from '../site/assets/core.mjs';
 import {makeHandler} from '../lib/service.mjs';
 import {monitorGroups} from '../lib/weather-worker-core.mjs';
 

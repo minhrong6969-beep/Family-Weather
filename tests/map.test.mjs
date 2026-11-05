@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {weatherMapMarkup} from '../assets/weather-map.mjs';
+import {weatherMapMarkup} from '../site/assets/weather-map.mjs';
 import {readFileSync} from 'node:fs';
 
 test('weather map is available without a family group in both languages',()=>{
@@ -17,8 +17,8 @@ test('weather map is available without a family group in both languages',()=>{
 });
 test('map is first in navigation, preferences have both palettes, pages are wired',()=>{
  const html=readFileSync(new URL('../site/index.html',import.meta.url),'utf8');
- const app=readFileSync(new URL('../assets/app.mjs',import.meta.url),'utf8');
- const css=readFileSync(new URL('../assets/themes.css',import.meta.url),'utf8');
+ const app=readFileSync(new URL('../site/assets/app.mjs',import.meta.url),'utf8');
+ const css=readFileSync(new URL('../site/assets/themes.css',import.meta.url),'utf8');
  assert.ok(html.indexOf('data-page="map"')<html.indexOf('data-page="dashboard"'));
  assert.match(app,/page:'map'/);
  assert.match(app,/weatherMapMarkup\(state.lang\)/);
